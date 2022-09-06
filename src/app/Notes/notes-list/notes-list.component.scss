@@ -1,0 +1,29 @@
+.notesWrapper{
+ text-align: center;
+}
+.notesWrapper ul{
+    list-style: none;
+    padding: 0 33.2%;
+}
+.notesWrapper ul li{
+    text-align: left;
+    padding: 10px;
+    background-color: aliceblue;
+    margin: 10px;
+    box-shadow: 2px 5px 10px 1px #ccc;
+}
+.notesWrapper div:first-child{
+    margin: 10px 0;
+}
+.notesWrapper button{
+    background-color: #1976d2 !important;
+    color:#fff;
+    border:0;
+    width: 32%;
+    padding:10px;
+}
+.notesWrapper ul li p{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

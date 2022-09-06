@@ -1,0 +1,38 @@
+.noteDetailsWraapper{
+    text-align: center;
+    padding:20px 0
+}
+.noteForm button{
+    background-color: #ccc;
+    border:0;
+    width: 32%;
+}
+.noteForm input, .noteForm textarea, .noteForm button, .noteDetailsWraapper button {
+    width: 30%;
+    padding:10px;
+}
+.noteDetailsWraapper .btn button{
+    border: 0;
+    background-color: #ccc;
+    margin: 0 5px;
+}
+.btnWidth{
+    width: 14.6% !important;
+}
+.noteCreationDate{
+    background-color: #ccc;
+    padding: 10px;
+    margin: 0 auto;
+    width: 30.3%;
+    text-align: left;
+    margin-bottom: 35px;
+}
+.error{
+    width: 78.1%;
+    margin-top: 10px;
+    color: red;
+}
+.disabledBtn{
+    background-color: #1976d2 !important;
+    color:#fff;
+}

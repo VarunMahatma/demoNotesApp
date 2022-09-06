@@ -1,0 +1,15 @@
+<div class="notesWrapper">
+    <div>
+        <button (click)="addNotes()">Add Note</button>
+    </div>
+    <ul>
+        <li *ngFor="let item of notesList; let i = index" (click)="editNote(item)">
+            <h5>{{item?.noteTitle}}</h5>
+            <p>{{item?.noteBody}}</p>
+            <p>{{item?.noteCreationDate | date : 'medium'}}</p>
+        </li>
+    </ul>
+    <div *ngIf="notesList.length == 0">
+        No Notes Found
+    </div>
+</div>

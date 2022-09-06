@@ -1,0 +1,34 @@
+<div class="noteDetailsWraapper">
+    <form *ngIf="selectedNoteObj" class="noteForm" [formGroup]="noteForm" (ngSubmit)="saveNote();">
+        <div>
+            <input type="text" placeholder="Note Title" required formControlName="noteTitle">
+            <br>
+            <div class="error" *ngIf="noteForm.get('noteTitle') && noteForm.get('noteTitle').invalid && noteForm.get('noteTitle').touched">Note title is required</div>
+        </div>
+        <br>
+        <br>
+        <div>
+            <textarea type="text" placeholder="Note Body" required formControlName="noteBody"></textarea>
+            <br>
+            <div class="error" *ngIf="noteForm.get('noteBody') && noteForm.get('noteBody').invalid && noteForm.get('noteBody').touched">Note body is required</div>
+        </div>
+        <br>
+        <br>
+
+        <div class="noteCreationDate" *ngIf="selectedNoteObj.operationType == 'Edit'">
+            <input [hidden]=true type="text" placeholder="Note Title" required formControlName="noteCreationDate">
+            <div>{{noteForm.get('noteCreationDate').value | date : 'medium'}}</div>
+        </div>
+        <button type="submit" [disabled]="noteForm.invalid" [ngClass]="{disabledBtn : !noteForm.invalid}">
+            <span *ngIf="selectedNoteObj.operationType == 'New'">Add New Note</span>
+            <span *ngIf="selectedNoteObj.operationType != 'New'">Update Note</span>
+        </button>
+    </form>
+    <br>
+    <div *ngIf="selectedNoteObj" class="btn">
+        <button [ngClass]="{btnWidth : selectedNoteObj.operationType != 'New'}"
+            *ngIf="selectedNoteObj.operationType != 'New'" (click)="deleteNote()">Delete Note</button>
+        <button [ngClass]="{btnWidth : selectedNoteObj.operationType != 'New'}"
+            (click)="backToNoteList()">Cancel</button>
+    </div>
+</div>
